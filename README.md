@@ -11,9 +11,9 @@ Modulous is a **cross-platform Electron-based application** designed to simplify
 - **Cross-Platform Support:** Works on Windows, macOS, and Linux.
 
 ## 🛠️ Technologies Used
-- **[Electron]():** Cross-platform desktop applications using JavaScript, HTML, and CSS.
+- **Electron:** Cross-platform desktop applications using JavaScript, HTML, and CSS.
 - **Node.js:** Backend server-side logic.
-- **[adm-zip]():** For handling ZIP file compression and extraction.
+- **adm-zip:** For handling ZIP file compression and extraction.
 - **basic-ftp:** Connect to servers and transfer files as an FTP client.
 - **JavaScript ES6+:** Core development language for this project.
 
@@ -48,4 +48,4 @@ Modulous is a **cross-platform Electron-based application** designed to simplify
 Special thanks to:
 - The Minecraft community for inspiring this project.
 - Serrato and Bethea for inspiring me to revive this project
-- Developers of [`adm-zip`]() and [`basic-ftp`]() for making ZIP file and FTP handling easier.
+- Developers of `adm-zip` and `basic-ftp` for making ZIP file and FTP handling easier.

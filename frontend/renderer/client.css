@@ -1,0 +1,265 @@
+body {
+    background-image: url('./assets/purplebg.png'); /* Path to the PNG */
+    background-size: cover; /* Make it cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-position: center; /* Center the image */
+    margin: 0; /* Remove default margin for consistent background */
+    height: 100vh; /* Ensure the body fills the viewport */
+    overflow: hidden; /* Disable scrolling */
+
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack content vertically */
+}
+
+.loader {
+    font-size: 2em;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.loader > * {
+    color: #ffffff;
+}
+
+.loader span {
+    display: inline-flex;
+}
+
+.loader span:nth-child(2) {
+    letter-spacing: -1em;
+    overflow: hidden;
+    animation: reveal 3s cubic-bezier(0.645, 0.045, 0.355, 1) alternate;
+}
+
+@keyframes reveal {
+    0%,
+    100% {
+        opacity: 0.5;
+        letter-spacing: -1em;
+    }
+
+    50% {
+        opacity: 1;
+        letter-spacing: 0em;
+    }
+}
+
+.title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: bold;
+    letter-spacing: .1em;
+    font-size: medium;
+}
+
+.card {
+    width: 400px;
+    height: 154px;
+    background: #07182E;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    justify-content: space-evenly; /* Space buttons evenly */
+    align-items: center; /* Center buttons horizontally */
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.card h2 {
+    z-index: 1;
+    color: white;
+    font-size: 2em;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+    height: 300%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 5s linear;
+}
+
+@keyframes rotBGimg {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    background: #07182E;
+    inset: 5px;
+    border-radius: 15px;
+}
+
+.box-input {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column; /* Stack input and button vertically */
+    align-items: center; /* Center horizontally */
+    gap: 15px; /* Add space between the input and the button */
+}
+
+.border {
+    background-image: linear-gradient(to right bottom, #e300ff, #ff00aa, #ff5956, #ffb900, #fffe00);
+    box-shadow: -25px -10px 30px -5px rgba(225, 0, 255, 0.5),
+    25px -10px 30px -5px rgba(255, 0, 212, 0.5),
+    25px 10px 30px -5px rgba(255, 174, 0, 0.5),
+    -25px 10px 30px -5px rgba(255, 230, 0, 0.5);
+    padding: 4px;
+    display: flex; /* Ensure the input stays centered */
+    justify-content: center;
+}
+
+.input {
+    background-color: #212121;
+    max-width: 250px;
+    height: 40px;
+    padding: 0 19px 0 10px;
+    font-size: 1.1em;
+    position: relative;
+    border: none;
+    color: white;
+    outline: 0;
+    overflow: hidden;
+    text-align: center; /* Optional: Centers text in input */
+}
+
+.box-input::after,
+.box-input::before {
+    content: "";
+    width: 130px;
+    height: 30px;
+    position: absolute;
+    z-index: -1;
+}
+
+.box-input::after {
+    bottom: 0;
+    right: 0;
+}
+
+.box-input::before {
+    top: 0;
+    left: 0;
+}
+
+.input::placeholder {
+    transition: all 0.5s ease-in, transform 0.2s ease-in 0.6s;
+}
+
+.input:focus::placeholder {
+    padding-left: 165px;
+    transform: translateY(-50px);
+}
+
+button {
+    font-size: 1.4em;
+    padding: 0.6em 1.2em;
+    border-radius: 0.5em;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #000000b4;
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    padding: 3px;
+    background: linear-gradient(90deg, #03a9f4, #f441a5);
+    border-radius: 0.9em;
+    transition: all 0.4s ease;
+    z-index: 1;
+    width: fit-content; /* Optional: Adjusts button width to fit content */
+    display: flex;
+    justify-content: center; /* Centers the button inside */
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    border-radius: 0.9em;
+    z-index: -10;
+    filter: blur(0);
+    transition: filter 0.4s ease;
+}
+
+.container:hover::before {
+    background: linear-gradient(90deg, #03a9f4, #f441a5);
+    filter: blur(1.2em);
+}
+
+.container:active::before {
+    filter: blur(0.2em);
+}
+
+#backbtn1 {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#backbtn1::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -4px;
+    top: -1px;
+    margin: auto;
+    width: 128px;
+    height: 48px;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+    z-index: -10;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#backbtn1::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(20px);
+}
+
+#backbtn1:hover::after {
+    filter: blur(30px);
+}
+
+#backbtn1:hover::before {
+    transform: rotate(-180deg);
+}
+
+#backbtn1:active::before {
+    scale: 0.7;
+}
